@@ -1,0 +1,185 @@
+{% extends "template.html" %}
+
+{% block body %}
+<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/navbar-fixed/">
+
+<!-- Bootstrap Custom CSS -->
+<script>
+  add_css("{{url_for('static', filename = 'styles/fixed_carousel.css')}}")
+  add_css("{{url_for('static', filename = 'styles/carousel.css', v=0.01)}}")
+  add_css("{{url_for('static', filename = 'styles/navbar-top-fixed.css', v=0.01)}}")
+
+</script>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+      <h1 class="jumbotron-heading">Visualizations</h1>
+      <p class="lead text-muted">
+      Images depicting certain info about our project, including how it performed
+        and fequency of certain terminology.</p>
+  </section>
+
+  <!-- Start of carousel content-->
+  <div id="carouselExampleIndicators" style = "padding: 15px" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators" style = "align-content: bottom;">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+
+      <!-- First Album for main model-->
+      <div class="carousel-item active h-75" id="first_carousel">
+
+        <div class="album py-5 bg-dark">
+          <div class="container">
+              <h2 class = "text-center">Visualizations of Multinomial Naive Bayes Model</h2>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                  alt="Thumbnail [100%x225]" src="{{url_for('static', filename='images/Multinomial_Confusion_Matrix.png')}}" data-holder-rendered="true">
+                  <div class="card-body">
+                    <p class="card-text">Confusion Matrix of our Multinomial Naive Bayes model. Must explain a bit more.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">9 mins</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                   alt="Thumbnail [100%x225]" src="{{url_for('static', filename='images/GoodWordsPlot.png')}}" data-holder-rendered="true">
+                  <div class="card-body">
+                    <p class="card-text">Horizontal bar graph demonstrating the most frequent words in texts that were deemed "good" (a score of 1) </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">Something else?</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                   alt="Thumbnail [100%x225]" src="{{url_for('static', filename='images/MidWordsPlot.png')}}" data-holder-rendered="true">
+                  <div class="card-body">
+                    <p class="card-text">Horizontal bar graph displaying the most frequent words in texts where the model could not differntiate between "good" (1) or "bad" (0).</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">Add something?</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                  alt="Thumbnail [100%x225]" src="{{url_for('static', filename='images/BadWordsPlot.png')}}" data-holder-rendered="true">
+                  <div class="card-body">
+                    <p class="card-text">Horizontal bar graph depicting the terminology with the highest number of appearances in texts that were deemed "bad" (score of 0).</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">Add something?</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Album for another model-->
+      <div class="carousel-item h-75" id="second_carousel">
+
+        <div class="album py-5">
+          <div class="container">
+            <h2 class = "text-center">Visualizations of the Model in R</h2>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card mb-4 box-shadow bg-dark">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                  alt="Thumbnail [100%x225]" src="{{url_for('static', filename='images/Rplot.png')}}" data-holder-rendered="true">
+                  <div class="card-body bg-dark">
+                    <p class="card-text">Learning curve 1</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">Base model (passing raw data into the ML model)</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card mb-4 box-shadow bg-dark">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                   alt="Thumbnail [100%x225]" src="{{url_for('static', filename='images/Rplot02.png')}}" data-holder-rendered="true">
+                  <div class="card-body bg-dark">
+                    <p class="card-text">Learning Curve 2 </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">Base model + parsing stop words</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card mb-4 box-shadow bg-dark">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                  alt="Thumbnail [100%x225]" src="{{url_for('static', filename='images/Rplot03.png')}}" data-holder-rendered="true">
+                  <div class="card-body bg-dark">
+                    <p class="card-text">Learning Curve 3</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">Base model + parsing + N-gram (bigram)</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card mb-4 box-shadow bg-dark">
+                  <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                    alt="Thumbnail [100%x225]" src="{{url_for('static', filename='images/Rplot04.png')}}"
+                    data-holder-rendered="true">
+                  <div class="card-body bg-dark">
+                    <p class="card-text">Learning Curve 4.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">Base model + parsing + bigram + TF-IDF</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="col-md-12">
+              <div class="card mb-4 box-shadow bg-white">
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                  alt="Thumbnail [100%x225]" src="{{url_for('static', filename='images/testinput.png')}}"
+                  data-holder-rendered="true">
+                <div class="card-body bg-dark">
+                  <p class="card-text">Table Illustrating Tested Values and Analysis</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Predictions of user generated text that was not in the dataset (we see model 1 has a bad performace, while 2-4 predicts similar labels)</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Analysis of second model end-->
+
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</main>
+
+
+
+{% endblock %}

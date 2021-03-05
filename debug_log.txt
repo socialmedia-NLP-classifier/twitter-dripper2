@@ -1,0 +1,11 @@
+Debug notes:
+
+- changed Procfile
+from 
+"
+web: gunicorn --bind 0.0.0.0:$PORT app:app
+"
+to 
+"
+web: gunicorn app:app --timeout 20
+"

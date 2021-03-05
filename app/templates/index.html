@@ -1,0 +1,67 @@
+{% extends "template.html" %}
+
+{% block body %}
+	<div class = "center-screen">
+		<h1> Try Me! </h1>
+		<form action="{{ url_for('index') }}" method="POST">
+			<fieldset>
+				<legend>Input Text</legend>
+				Type your comment in here:
+				<input name="user_input_text" type="text" autocomplete = "off" required>
+				<input type="submit" value="Submit">
+			</fieldset>
+		</form>
+		<br>
+
+		<!-- load analysis of the input text-->
+		<div class="alert alert-success col-6">
+			{% if input_text %}
+				<h4> Classification for: {{ input_text }} </h4>
+			{% endif %}
+
+			{% if result %}
+				<p> Model predicted: {{ result }} </p>
+			{% endif %}
+
+			{% if bad_percent %}
+				<p> Bad Post Percentage: {{ bad_percent }}% </p>
+			{% endif %}
+
+			{% if good_percent %}
+				<p> Good Post Percentage: {{ good_percent }}% </p>
+			{% endif %}
+		</div>
+
+		<div class="alert alert-success col-6" id="txt_history">
+			History
+			{% if r11 %}
+			<!--
+			we didn't need to generate dynamically so we wrote out all the cases
+			for dynamic loading, use session data
+			-->
+			<table id="history_table">
+				<tr>
+					<th>{% if r11 %}Text{% endif %}</th>
+					<th>{% if r11 %}Score{% endif %}</th>
+					<th>{% if r11 %}Evaluation{% endif %}</th>
+				</tr>
+				<tr>
+					<td>{% if r11 %}{{ r11 }}{% endif %}</td>
+					<td>{% if r12 %}{{ r12 }}{% endif %}</td>
+					<td>{% if r13 %}{{ r13 }}{% endif %}</td>
+				</tr>
+				<tr>
+					<td>{% if r21 %}{{ r21 }}{% endif %}</td>
+					<td>{% if r22 %}{{ r22 }}{% endif %}</td>
+					<td>{% if r23 %}{{ r23 }}{% endif %}</td>
+				</tr>
+				<tr>
+					<td>{% if r31 %}{{ r31 }}{% endif %}</td>
+					<td>{% if r32 %}{{ r32 }}{% endif %}</td>
+					<td>{% if r33 %}{{ r33 }}{% endif %}</td>
+				</tr>
+			</table>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
