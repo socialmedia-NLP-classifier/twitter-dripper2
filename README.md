@@ -1,23 +1,18 @@
-# twitter-classifier
-
-modified this line fewiufweuyfwefi
+# Twitter-Classifier
 
 Take in a post from twitter/facebook/ and other social-media platforms and train the model to classify the text with an “importance scale”.  If the input consists of images, we add a tag with appropriate detail to the text input and hope the classifier rates the image tag higher.  Example tag [IMAGE, 1080x400, name of pic].
 After we classify a text/post we can filter the collection of tweets and display the posts that are worth reading.
 Input: text and other meta-data of the post
-Output: either a Yes vs No or a numerical scale for how important the post is.
+Output: either a Yes vs No and a numerical scale for how important the post is.
 
-
-https://console.cloud.google.com/bigquery
-
-testing readme
 
 # Table of Content:
 - [twitter-classifier](#twitter-classifier)
 - [Table of Content:](#table-of-content)
-  - [dependencies](#dependencies)
-  - [Screenshots](#screenshots)
-  - [datasets](#datasets)
+  - [Dependencies](#dependencies)
+  - [Datasets](#datasets)
+  - [Flask App](#flask-app)
+  - [Hosted on Heroku](#hosted-on-heroku)
 - [Building an Flask App](#building-an-flask-app)
       - [Flask Documentation](#flask-documentation)
       - [Bootstrap Documentation](#bootstrap-documentation)
@@ -27,26 +22,31 @@ testing readme
     - [Making changes to your app.](#making-changes-to-your-app)
 
 
-## dependencies
-
-
+## Dependencies
 
 https://stackoverflow.com/questions/8165028/newbie-in-heroku-error-when-push-my-app-to-heroku/8171155#8171155
 
 
-
-
-
-
-
-## Screenshots
-
-
-## datasets
+## Datasets
 - https://www.kaggle.com/mtesconi/twitter-deep-fake-text
 - https://www.kaggle.com/phoeyleeteh/1970-vs-2017-profanity-curse-swearing-words
 - https://www.kaggle.com/davidmartngutirrez/twitter-bots-accounts
 - https://www.kaggle.com/cosmos98/twitter-and-reddit-sentimental-analysis-dataset?select=Twitter_Data.csv
+
+
+## Flask App
+
+[//]: # what exactly was done for the flask app?
+
+For the appearance portion: We used the Bootstrap Framework to provide the Python Flask App with a more appealing user interface
+- The navbar allows the user to navigate to the main page, the visualized results and a page on the creators
+- On the visualized results page, core components of Bootstrap were utilized including the jumbotron and the carousel to provide
+ easy access performance results of the model
+
+
+## Hosted on Heroku
+
+https://twitter-dripper2.herokuapp.com/
 
 
 # Building an Flask App
